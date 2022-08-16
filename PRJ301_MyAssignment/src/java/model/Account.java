@@ -11,31 +11,35 @@ import java.sql.Date;
  * @author leeng
  */
 public class Account {
+    private String id;
     private String username;
     private String password;
-    private Date dob;
-    private int age;
-    private String fullname;
-    private String telephone;
-    private String company;
-    private String assign;
-    private String title;
+    private Shift shift;
+    private Role role;
     private Question question;
+    private Info info;
+    private String answer;
+
+    public Account(String id, String username, String password, Shift shift, Role role, Question question, Info info, String answer) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.shift = shift;
+        this.role = role;
+        this.question = question;
+        this.info = info;
+        this.answer = answer;
+    }
 
     public Account() {
     }
 
-    public Account(String username, String password, Date dob, int age, String fullname, String telephone, String company, String assign, String title, Question question) {
-        this.username = username;
-        this.password = password;
-        this.dob = dob;
-        this.age = age;
-        this.fullname = fullname;
-        this.telephone = telephone;
-        this.company = company;
-        this.assign = assign;
-        this.title = title;
-        this.question = question;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -54,60 +58,20 @@ public class Account {
         this.password = password;
     }
 
-    public Date getDob() {
-        return dob;
+    public Shift getShift() {
+        return shift;
     }
 
-    public void setDob(Date dob) {
-        this.dob = dob;
+    public void setShift(Shift shift) {
+        this.shift = shift;
     }
 
-    public int getAge() {
-        return age;
+    public Role getRole() {
+        return role;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public void setCompany(String company) {
-        this.company = company;
-    }
-
-    public String getAssign() {
-        return assign;
-    }
-
-    public void setAssign(String assign) {
-        this.assign = assign;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public Question getQuestion() {
@@ -117,5 +81,25 @@ public class Account {
     public void setQuestion(Question question) {
         this.question = question;
     }
+
+    public Info getInfo() {
+        return info;
+    }
+
+    public void setInfo(Info info) {
+        this.info = info;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+
+
+
+    
     
 }
