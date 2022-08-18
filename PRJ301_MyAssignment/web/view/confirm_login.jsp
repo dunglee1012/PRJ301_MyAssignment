@@ -17,7 +17,7 @@
                 count--;
                 span.innerHTML = count;
                 if (count <= 0) {
-                    window.location.href = "employee";  
+                    window.location.href = "list";  
                 }
             }
             setInterval(counting, 1000)

@@ -8,10 +8,6 @@
         <servlet-name>ForgetPasswordController</servlet-name>
         <servlet-class>controller.FotgetPasswordController</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>EmployeeController</servlet-name>
-        <servlet-class>controller.EmployeeController</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -19,10 +15,6 @@
     <servlet-mapping>
         <servlet-name>ForgetPasswordController</servlet-name>
         <url-pattern>/forget</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EmployeeController</servlet-name>
-        <url-pattern>/employee</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

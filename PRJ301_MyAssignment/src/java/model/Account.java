@@ -11,26 +11,12 @@ import java.sql.Date;
  * @author leeng
  */
 public class Account {
+
     private int aid;
     private String username;
     private String password;
-    private Shift shift;
-    private Role role;
     private Question question;
     private String answer;
-
-    public Account() {
-    }
-
-    public Account(int aid, String username, String password, Shift shift, Role role, Question question, String answer) {
-        this.aid = aid;
-        this.username = username;
-        this.password = password;
-        this.shift = shift;
-        this.role = role;
-        this.question = question;
-        this.answer = answer;
-    }
 
     public int getAid() {
         return aid;
@@ -56,22 +42,6 @@ public class Account {
         this.password = password;
     }
 
-    public Shift getShift() {
-        return shift;
-    }
-
-    public void setShift(Shift shift) {
-        this.shift = shift;
-    }
-
-    public Role getRole() {
-        return role;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
     public Question getQuestion() {
         return question;
     }
@@ -88,7 +58,4 @@ public class Account {
         this.answer = answer;
     }
 
-    
-    
-    
 }
