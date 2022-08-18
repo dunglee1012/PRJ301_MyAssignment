@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controller;
+package dal;
 
 import dal.DBContext;
 import java.sql.PreparedStatement;
@@ -18,7 +18,7 @@ import model.Request;
  *
  * @author leeng
  */
-public class RequestController extends DBContext {
+public class RequestDBContext extends DBContext {
 
     public ArrayList<Request> getRequests(String username) {
         ArrayList<Request> requests = new ArrayList<>();
@@ -42,8 +42,8 @@ public class RequestController extends DBContext {
 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(RequestController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RequestDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return null;
+        return requests;
     }
 }
