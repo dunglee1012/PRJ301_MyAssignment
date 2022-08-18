@@ -11,7 +11,7 @@ import java.sql.Date;
  * @author leeng
  */
 public class Account {
-    private String id;
+    private int id;
     private String username;
     private String password;
     private Shift shift;
@@ -20,7 +20,10 @@ public class Account {
     private Info info;
     private String answer;
 
-    public Account(String id, String username, String password, Shift shift, Role role, Question question, Info info, String answer) {
+    public Account() {
+    }
+
+    public Account(int id, String username, String password, Shift shift, Role role, Question question, Info info, String answer) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -31,14 +34,11 @@ public class Account {
         this.answer = answer;
     }
 
-    public Account() {
-    }
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -97,6 +97,8 @@ public class Account {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
+
+    
 
 
 
