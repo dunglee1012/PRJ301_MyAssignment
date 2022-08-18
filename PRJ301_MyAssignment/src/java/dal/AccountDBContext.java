@@ -19,10 +19,9 @@ public class AccountDBContext extends DBContext {
 
     public Account getAccount(String username, String password) {
         try {
-            String sql = "select * from Account\n"
+            String sql = "select * from Account \n"
                     + "where username = ?\n"
                     + "and [password] = ?";
-
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             stm.setString(2, password);
@@ -36,25 +35,20 @@ public class AccountDBContext extends DBContext {
         } catch (SQLException ex) {
             Logger.getLogger(AccountDBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
+
         return null;
     }
 
-    public String getPassword(String username, int qid, int sid, String answer, int eid, int rid) {
+    public String getPassword(String username, int qid, String answer) {
         try {
-            String sql = "select [password] from Account\n"
+            String sql = "select [password] from Account \n"
                     + "where username = ?\n"
                     + "and qid = ?\n"
-                    + "and [sid] = ?\n"
-                    + "and answer = ?\n"
-                    + "and eid = ?\n"
-                    + "and rid = ?";
+                    + "and answer = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             stm.setInt(2, qid);
-            stm.setInt(3, sid);
-            stm.setString(4, answer);
-            stm.setInt(5, eid);
-            stm.setInt(6, rid);
+            stm.setString(3, answer);
             ResultSet rs = stm.executeQuery();
             if (rs.next()) {
                 return rs.getString("password");
@@ -64,4 +58,5 @@ public class AccountDBContext extends DBContext {
         }
         return null;
     }
+
 }

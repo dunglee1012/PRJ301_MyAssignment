@@ -20,7 +20,6 @@ public class QuestionDBContext extends DBContext {
 
     public ArrayList<Question> getQuestions() {
         ArrayList<Question> questions = new ArrayList<>();
-
         try {
             String sql = "select qid, question from Question";
             PreparedStatement stm = connection.prepareStatement(sql);
