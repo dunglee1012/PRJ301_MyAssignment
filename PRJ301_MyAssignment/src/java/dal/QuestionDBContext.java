@@ -4,10 +4,36 @@
  */
 package dal;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Question;
+
 /**
  *
  * @author leeng
  */
-public class QuestionDBContext extends DBContext{
-    
+public class QuestionDBContext extends DBContext {
+
+    public ArrayList<Question> getQuestions() {
+        ArrayList<Question> questions = new ArrayList<>();
+
+        try {
+            String sql = "select qid, question from Question";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            ResultSet rs = stm.executeQuery();
+            while (rs.next()) {
+                Question q = new Question();
+                q.setQid(rs.getInt("qid"));
+                q.setQuestion(rs.getString("question"));
+                questions.add(q);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QuestionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return questions;
+    }
 }
