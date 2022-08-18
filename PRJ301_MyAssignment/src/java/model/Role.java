@@ -9,23 +9,23 @@ package model;
  * @author leeng
  */
 public class Role {
-    private int id;
+    private int rid;
     private String name;
 
     public Role() {
     }
 
-    public Role(int id, String name) {
-        this.id = id;
+    public Role(int rid, String name) {
+        this.rid = rid;
         this.name = name;
     }
 
-    public int getId() {
-        return id;
+    public int getRid() {
+        return rid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setRid(int rid) {
+        this.rid = rid;
     }
 
     public String getName() {
@@ -35,7 +35,5 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
-    
-    
     
 }
