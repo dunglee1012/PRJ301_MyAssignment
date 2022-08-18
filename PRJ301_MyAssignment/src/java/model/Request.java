@@ -11,18 +11,19 @@ import java.sql.Date;
  * @author leeng
  */
 public class Request {
-    private int id;
+
+    private int rid;
     private String content;
     private Date from;
     private Date to;
-    private Account createdby; 
+    private Account createdby;
 
-    public int getId() {
-        return id;
+    public int getRid() {
+        return rid;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setRid(int rid) {
+        this.rid = rid;
     }
 
     public String getContent() {
@@ -56,5 +57,5 @@ public class Request {
     public void setCreatedby(Account createdby) {
         this.createdby = createdby;
     }
-    
+
 }

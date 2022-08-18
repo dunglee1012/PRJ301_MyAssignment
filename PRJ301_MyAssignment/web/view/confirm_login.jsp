@@ -26,5 +26,5 @@
     <body>
     </body>
     <div>Hello ${requestScope.acc.username}</div>
-    <div>Redirect to Employee after <span id="timer">3</span> seconds</div>
+    <div>Redirect to List Request after <span id="timer">3</span> seconds</div>
 </html>

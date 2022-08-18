@@ -19,19 +19,19 @@ import model.Request;
  * @author leeng
  */
 public class RequestDBContext extends DBContext {
-
+    
     public ArrayList<Request> getRequests(String username) {
         ArrayList<Request> requests = new ArrayList<>();
         try {
-            String sql = "SELECT r.[id],[content],[from],[to],[createdby]\n"
-                    + "FROM [Request] r\n"
+            String sql = "SELECT rid ,[content],[from],[to],[createdby]\n"
+                    + "FROM [Request] \n"
                     + "WHERE createdby = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
             stm.setString(1, username);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Request r = new Request();
-                r.setId(rs.getInt("id"));
+                r.setRid(rs.getInt("rid"));
                 r.setContent(rs.getString("content"));
                 r.setFrom(rs.getDate("from"));
                 r.setTo(rs.getDate("to"));
@@ -39,7 +39,7 @@ public class RequestDBContext extends DBContext {
                 account.setUsername(rs.getString("createdby"));
                 r.setCreatedby(account);
                 requests.add(r);
-
+                
             }
         } catch (SQLException ex) {
             Logger.getLogger(RequestDBContext.class.getName()).log(Level.SEVERE, null, ex);
