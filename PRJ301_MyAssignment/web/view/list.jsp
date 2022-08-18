@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:include page="greeting.jsp"/>
+        <jsp:include page="welcome.jsp"/>
         <table border="1px">
             <tr>
                 <th>Id</th>
