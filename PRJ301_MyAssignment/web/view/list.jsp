@@ -13,9 +13,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:include page="welcome.jsp"/>
+    <center><jsp:include page="welcome.jsp"/></center>
+        
     <center>
-        <table>
+        <table border="1px">
             <tr>
                 <th>ID</th>
                 <th>Content</th>
@@ -23,7 +24,7 @@
                 <th>To</th>
                 <th>CreatedBy</th>
             </tr>
-            <c:forEach items="${request}" var="r">
+            <c:forEach items="${requestScope.request}" var="r">
                 <tr>
                     <td>${r.id}</td>
                     <td>${r.content}</td>
@@ -32,8 +33,13 @@
                     <td>${r.createdby.username}</td>
                 </tr>
             </c:forEach>
+
         </table>
+        <br>
+        <a href="edit">EDIT</a>
+        <a href="delete">DELETE</a>
     </center>
+
 
 
 </body>
