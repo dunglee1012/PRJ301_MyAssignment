@@ -13,8 +13,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-    <center><jsp:include page="welcome.jsp"/></center>
-        
+    <center><jsp:include page="welcome.jsp"/>
+        <a href="edit">EDIT</a>
+        <a href="delete">DELETE</a>
+    </center>
+
     <center>
         <table border="1px">
             <tr>
@@ -36,8 +39,7 @@
 
         </table>
         <br>
-        <a href="edit">EDIT</a>
-        <a href="delete">DELETE</a>
+
     </center>
 
 
