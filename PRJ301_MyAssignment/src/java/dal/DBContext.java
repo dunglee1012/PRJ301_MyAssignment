@@ -18,7 +18,7 @@ public class DBContext {
 
     protected Connection connection;
 
-    public DBContext() {
+    public DBContext () {
         try {
             String user = "sa";
             String pass = "12345";
@@ -29,4 +29,13 @@ public class DBContext {
             Logger.getLogger(DBContext.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+//    //test connection
+//    public static void main(String[] args) {
+//        try{
+//            System.out.println(new DBContext().connection);
+//        }catch(Exception e){
+//            
+//        }
+//    }
 }
