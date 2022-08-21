@@ -30,12 +30,12 @@ public class DBContext {
         }
     }
     
-//    //test connection
-//    public static void main(String[] args) {
-//        try{
-//            System.out.println(new DBContext().connection);
-//        }catch(Exception e){
-//            
-//        }
-//    }
+    //test connection
+    public static void main(String[] args) {
+        try{
+            System.out.println(new DBContext().connection);
+        }catch(Exception e){
+            
+        }
+    }
 }

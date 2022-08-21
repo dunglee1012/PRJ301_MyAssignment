@@ -4,7 +4,7 @@
  */
 package model;
 
-import java.sql.Date;
+
 
 /**
  *
@@ -18,6 +18,18 @@ public class Account {
     private Question question;
     private String answer;
 
+    public Account() {
+    }
+
+    public Account(int id, String username, String password, Question question, String answer) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.question = question;
+        this.answer = answer;
+    }
+    
+    
     public int getId() {
         return id;
     }

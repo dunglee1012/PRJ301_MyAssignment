@@ -25,7 +25,7 @@ public class LoginController extends HttpServlet {
         AccountDBContext db = new AccountDBContext();
         Account account = db.getAccount(username, password);
         if (account != null) {
-            req.setAttribute("acc", account);
+            req.setAttribute("account", account);
             req.getRequestDispatcher("view/confirm_login.jsp").forward(req, resp);
         } else {
             resp.getWriter().println("login failed");

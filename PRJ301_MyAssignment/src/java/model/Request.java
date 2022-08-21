@@ -18,6 +18,25 @@ public class Request {
     private Date to;
     private Account createdby;
 
+    public Request() {
+    }
+
+    public Request(int id, String content, Date from, Date to, Account createdby) {
+        this.id = id;
+        this.content = content;
+        this.from = from;
+        this.to = to;
+        this.createdby = createdby;
+    }
+
+    public Account getCreatedby() {
+        return createdby;
+    }
+
+    public void setCreatedby(Account createdby) {
+        this.createdby = createdby;
+    }
+
     public int getId() {
         return id;
     }
@@ -48,14 +67,6 @@ public class Request {
 
     public void setTo(Date to) {
         this.to = to;
-    }
-
-    public Account getCreatedby() {
-        return createdby;
-    }
-
-    public void setCreatedby(Account createdby) {
-        this.createdby = createdby;
     }
 
     @Override

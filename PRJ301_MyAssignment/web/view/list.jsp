@@ -17,19 +17,18 @@
     <center>
         <table>
             <tr>
-                <th>RequestID</th>
+                <th>ID</th>
                 <th>Content</th>
                 <th>From</th>
                 <th>To</th>
                 <th>CreatedBy</th>
             </tr>
             <c:forEach items="${requestScope.requests}" var="r">
-                <c:set var="id" value="${r.id}">
-                    <tr>
-                        <td>${id}</td>
-                    </tr>
-                </c:set>
-                
+                <td>${r.id}</td>
+                <td>${r.content}</td>
+                <td>${r.from}</td>
+                <td>${r.to}</td>
+                <td>${r.createdby.username}</td>
             </c:forEach>
         </table>
     </center>
