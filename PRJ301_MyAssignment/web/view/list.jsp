@@ -23,12 +23,14 @@
                 <th>To</th>
                 <th>CreatedBy</th>
             </tr>
-            <c:forEach items="${requestScope.requests}" var="r">
-                <td>${r.id}</td>
-                <td>${r.content}</td>
-                <td>${r.from}</td>
-                <td>${r.to}</td>
-                <td>${r.createdby.username}</td>
+            <c:forEach items="${request}" var="r">
+                <tr>
+                    <td>${r.id}</td>
+                    <td>${r.content}</td>
+                    <td>${r.from}</td>
+                    <td>${r.to}</td>
+                    <td>${r.createdby.username}</td>
+                </tr>
             </c:forEach>
         </table>
     </center>

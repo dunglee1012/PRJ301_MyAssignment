@@ -6,6 +6,7 @@ package controller;
 
 import dal.RequestDBContext;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -17,27 +18,25 @@ import model.Request;
  *
  * @author leeng
  */
-public class ListRequestController extends BasedRequiredLoginController {
+public class ListRequestController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 //lay data tu dbcontext
-        Account account = (Account) request.getSession().getAttribute("account");
+        
         RequestDBContext db = new RequestDBContext();
-        List<Request> requests = db.getRequests(account.getUsername());
+        List<Request> requests = db.getRequests();
         //set data gui len jsp
         request.setAttribute("request", requests);
         request.getRequestDispatcher("view/list.jsp").forward(request, response);
     }
 
     @Override
-    protected void processGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
-    }
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        processRequest(req, resp);    }
 
     @Override
-    protected void processPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processRequest(request, response);
-    }
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        processRequest(req, resp);    }
 
 }

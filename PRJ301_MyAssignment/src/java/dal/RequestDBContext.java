@@ -20,17 +20,11 @@ import model.Request;
  */
 public class RequestDBContext extends DBContext {
 
-    public List<Request> getRequests(String username) {
+    public List<Request> getRequests() {
         List<Request> request = new ArrayList<>();
         try {
-            String sql = "select id,\n"
-                    + "content,\n"
-                    + "[from],\n"
-                    + "[to],\n"
-                    + "createdby\n"
-                    + "from Request";
+            String sql = "select id, content,[from],[to], createdby from Request";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, username);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Request r = new Request();
@@ -38,9 +32,9 @@ public class RequestDBContext extends DBContext {
                 r.setContent(rs.getString("content"));
                 r.setFrom(rs.getDate("from"));
                 r.setTo(rs.getDate("to"));
-                Account account = new Account();
-                account.setUsername(rs.getString("createdby"));
-                r.setCreatedby(account);
+                Account acc = new Account();
+                acc.setUsername(rs.getString("createdby"));
+                r.setCreatedby(acc);
                 request.add(r);
             }
         } catch (SQLException ex) {
@@ -49,11 +43,11 @@ public class RequestDBContext extends DBContext {
         return request;
     }
 
-//    public static void main(String[] args) {
-//        RequestDBContext db = new RequestDBContext();
-//        List<Request> list = db.getRequests();
-//        for (Request r : list) {
-//            System.out.println(r);
-//        }
-//    }
+    public static void main(String[] args) {
+        RequestDBContext db = new RequestDBContext();
+        List<Request> list = db.getRequests();
+        for (Request r : list) {
+            System.out.println(r);
+        }
+    }
 }
