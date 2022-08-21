@@ -9,23 +9,15 @@ package model;
  * @author leeng
  */
 public class Question {
-    private int qid;
+    private int id;
     private String question;
 
-    public Question() {
+    public int getId() {
+        return id;
     }
 
-    public Question(int qid, String question) {
-        this.qid = qid;
-        this.question = question;
-    }
-
-    public int getQid() {
-        return qid;
-    }
-
-    public void setQid(int qid) {
-        this.qid = qid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getQuestion() {
@@ -35,5 +27,12 @@ public class Question {
     public void setQuestion(String question) {
         this.question = question;
     }
+
+    @Override
+    public String toString() {
+        return "Question{" + "id=" + id + ", question=" + question + '}';
+    }
+
+    
     
 }

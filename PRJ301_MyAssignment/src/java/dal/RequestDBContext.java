@@ -23,7 +23,7 @@ public class RequestDBContext extends DBContext {
     public ArrayList<Request> getRequests(String username) {
         ArrayList<Request> requests = new ArrayList<>();
         try {
-            String sql = "SELECT rid ,[content],[from],[to],[createdby]\n"
+            String sql = "SELECT id ,[content],[from],[to],[createdby]\n"
                     + "FROM [Request] \n"
                     + "WHERE createdby = ?";
             PreparedStatement stm = connection.prepareStatement(sql);
@@ -31,7 +31,7 @@ public class RequestDBContext extends DBContext {
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Request r = new Request();
-                r.setRid(rs.getInt("rid"));
+                r.setId(rs.getInt("id"));
                 r.setContent(rs.getString("content"));
                 r.setFrom(rs.getDate("from"));
                 r.setTo(rs.getDate("to"));

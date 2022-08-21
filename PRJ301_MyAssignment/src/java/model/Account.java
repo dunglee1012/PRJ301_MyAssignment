@@ -12,18 +12,18 @@ import java.sql.Date;
  */
 public class Account {
 
-    private int aid;
+    private int id;
     private String username;
     private String password;
     private Question question;
     private String answer;
 
-    public int getAid() {
-        return aid;
+    public int getId() {
+        return id;
     }
 
-    public void setAid(int aid) {
-        this.aid = aid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -58,4 +58,10 @@ public class Account {
         this.answer = answer;
     }
 
+    @Override
+    public String toString() {
+        return "Account{" + "id=" + id + ", username=" + username + ", password=" + password + ", question=" + question + ", answer=" + answer + '}';
+    }
+
+    
 }

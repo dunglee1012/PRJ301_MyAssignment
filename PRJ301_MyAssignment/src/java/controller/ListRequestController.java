@@ -22,6 +22,7 @@ public class ListRequestController extends BasedRequiredLoginController {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         Account account = (Account) request.getSession().getAttribute("account");
 
         RequestDBContext db = new RequestDBContext();

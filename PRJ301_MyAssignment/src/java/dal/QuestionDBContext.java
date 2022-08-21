@@ -21,12 +21,12 @@ public class QuestionDBContext extends DBContext {
     public ArrayList<Question> getQuestions() {
         ArrayList<Question> questions = new ArrayList<>();
         try {
-            String sql = "select qid, question from Question";
+            String sql = "select id, question from Question";
             PreparedStatement stm = connection.prepareStatement(sql);
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 Question q = new Question();
-                q.setQid(rs.getInt("qid"));
+                q.setId(rs.getInt("id"));
                 q.setQuestion(rs.getString("question"));
                 questions.add(q);
             }

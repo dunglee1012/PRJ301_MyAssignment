@@ -14,14 +14,26 @@
     </head>
     <body>
         <jsp:include page="welcome.jsp"/>
-        <c:forEach items="${requestScope.requests}" var="r">
-        <tr>
-            <td>${r.rid}</td>
-            <td>${r.content}</td>
-            <td>${r.from}</td>
-            <td>${r.to}</td>
-            <td>${r.createdby.username}</td>
-        <tr/>
-        </c:forEach>
-    </body>
+    <center>
+        <table>
+            <tr>
+                <th>RequestID</th>
+                <th>Content</th>
+                <th>From</th>
+                <th>To</th>
+                <th>CreatedBy</th>
+            </tr>
+            <c:forEach items="${requestScope.requests}" var="r">
+                <c:set var="id" value="${r.id}">
+                    <tr>
+                        <td>${id}</td>
+                    </tr>
+                </c:set>
+                
+            </c:forEach>
+        </table>
+    </center>
+
+
+</body>
 </html>

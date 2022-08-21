@@ -12,18 +12,18 @@ import java.sql.Date;
  */
 public class Request {
 
-    private int rid;
+    private int id;
     private String content;
     private Date from;
     private Date to;
     private Account createdby;
 
-    public int getRid() {
-        return rid;
+    public int getId() {
+        return id;
     }
 
-    public void setRid(int rid) {
-        this.rid = rid;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getContent() {
@@ -56,6 +56,11 @@ public class Request {
 
     public void setCreatedby(Account createdby) {
         this.createdby = createdby;
+    }
+
+    @Override
+    public String toString() {
+        return "Request{" + "id=" + id + ", content=" + content + ", from=" + from + ", to=" + to + ", createdby=" + createdby + '}';
     }
 
 }
